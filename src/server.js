@@ -1,33 +1,32 @@
+const { v1Router } = require("../routers/v1Router");
+const { MongoClient } = require("mongodb");
 const express = require("express");
-const mongoose = require("mongoose");
 const cors = require("cors");
-const router = require("../routers/v1Router").v1Router;
 
 const app = express();
 app.use(express.json());
 
-const username = 'talcohen111';
-const password = 'Talco309!';
-const cluster = 'cluster0.mu90v';
-const dbName = 'epicure';
+const username = 'adminUser';
+const password = 'nuYdv8kETjz1nZMA';
 
-const url = `mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbName}?retryWrites=true&w=majority`
+const uri = `mongodb+srv://${username}:${password}@socialnetwrok.cuyk8rc.mongodb.net/?retryWrites=true&w=majority`;
 
-mongoose.connect(url,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+async function startServer() {
+  const client = new MongoClient(uri);
+
+  try {
+    await client.connect();
+    console.log("MongoDB connected!");
+
+    app.use(express.urlencoded({ extended: true }));
+    app.use(cors());
+    app.use('/api', v1Router);
+
+    const port = 3000;
+    app.listen(port, () => console.log(`Server started on port ${port}`));
+  } catch (err) {
+    console.error("Error connecting to MongoDB:", err);
   }
-);
+}
 
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-  console.log("Connected successfully");
-});
-
-app.use(express.urlencoded({ extended : true }));
-app.use(cors());
-app.use('/api', router);
-
-app.listen(3000, () => console.log("connected"))
+startServer().catch(console.error);
