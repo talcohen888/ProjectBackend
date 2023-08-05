@@ -1,14 +1,18 @@
-const usersHandler = require("../handlers/usersHandler");
+import { readDataFromFile, writeDataToFile } from "./utils";
 
-const addUser = async (req, res) => {
+const addUser = (req, res) => {
   try {
-    user = {
+    const usersData = readDataFromFile('users.json');
+    const newUser = {
+      id: usersData.length + 1,
       ...req.body,
     };
-    const handlerResult = await usersHandler.postUser(user);
+
+    usersData.push(newUser);
+    writeDataToFile('users.json', usersData);
     res.status(200).json({
       status: "Success",
-      data: handlerResult,
+      data: newUser,
     });
   } catch (error) {
     res.status(400).json({
@@ -18,4 +22,20 @@ const addUser = async (req, res) => {
   }
 };
 
-module.exports = { addUser };
+const getAllUsers = (req, res) => {
+  try {
+    const usersData = readDataFromFile('users.json');
+    res.status(200).json({
+      status: "Success",
+      data: usersData,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Failed",
+      message: error,
+    });
+  }
+};
+
+module.exports = { addUser, getAllUsers };
+

@@ -1,14 +1,18 @@
-const postsHandler = require("../handlers/postsHandler");
+import { readDataFromFile, writeDataToFile } from "./utils";
 
-const addPost = async (req, res) => {
+const addPost = (req, res) => {
   try {
-    post = {
+    const postsData = readDataFromFile('posts.json');
+    const newPost = {
+      id: postsData.length + 1,
       ...req.body,
     };
-    const handlerResult = await postsHandler.postPost(post);
+
+    postsData.push(newPost);
+    writeDataToFile('posts.json', postsData);
     res.status(200).json({
       status: "Success",
-      data: handlerResult,
+      data: newPost,
     });
   } catch (error) {
     res.status(400).json({
@@ -18,4 +22,19 @@ const addPost = async (req, res) => {
   }
 };
 
-module.exports = { addPost };
+const getAllPosts = (req, res) => {
+  try {
+    const postsData = readDataFromFile('posts.json');
+    res.status(200).json({
+      status: "Success",
+      data: postsData,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "Failed",
+      message: error,
+    });
+  }
+};
+
+module.exports = { addPost, getAllPosts };
