@@ -1,4 +1,4 @@
-import { readDataFromFile, writeDataToFile } from "./utils";
+const { readDataFromFile, writeDataToFile } = require("./utils");
 
 const addPost = (req, res) => {
   try {

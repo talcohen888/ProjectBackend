@@ -1,4 +1,4 @@
-import { readDataFromFile, writeDataToFile } from "./utils";
+const { readDataFromFile, writeDataToFile } = require("./utils");
 
 const addUser = (req, res) => {
   try {
@@ -23,6 +23,7 @@ const addUser = (req, res) => {
 };
 
 const getAllUsers = (req, res) => {
+  console.log(11);
   try {
     const usersData = readDataFromFile('users.json');
     res.status(200).json({
