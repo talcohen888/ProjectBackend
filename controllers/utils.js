@@ -32,8 +32,11 @@ function updateUserData(userData, newUserData) {
   return userData;
 }
 
-function updateUserActivity(currentActivity, newActivity) {
-  return [...currentActivity, newActivity];
+function updateUserActivity(currentActivity, newActivityKey) {
+  return {
+    ...currentActivity,
+    [new Date().toLocaleString()] : newActivityKey
+  };
 }
 
 module.exports = { readDataFromFile, writeDataToFile, checkUserExists, updateUserData, updateUserActivity };
