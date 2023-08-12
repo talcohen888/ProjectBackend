@@ -1,10 +1,66 @@
 [
-    {
-      "id": "1",
-      "username": "test",
-      "password": "Aa123",
-      "isAdmin": "true",
-      "firstName": "tal",
-      "lastName": "cohen"
-    }
+  {
+    "id": 1,
+    "username": "test",
+    "password": "Aa123",
+    "isAdmin": "true",
+    "firstName": "test",
+    "lastName": "testLastName",
+    "posts": [],
+    "following": [],
+    "activity": []
+  },
+  {
+    "id": 2,
+    "username": "test",
+    "password": "Aa123",
+    "isAdmin": "true",
+    "firstName": "test",
+    "lastName": "testLastName",
+    "posts": [],
+    "following": [],
+    "activity": [
+      "hey",
+      "hey1",
+      "hey1",
+      "hey3"
+    ]
+  },
+  {
+    "id": 3,
+    "username": "test",
+    "password": "Aa123",
+    "isAdmin": "true",
+    "firstName": "tal",
+    "lastName": "22",
+    "posts": [],
+    "following": [
+      1,
+      2,
+      4
+    ],
+    "activity": []
+  },
+  {
+    "id": 4,
+    "username": "test",
+    "password": "Aa123",
+    "isAdmin": "true",
+    "firstName": "test",
+    "lastName": "testLastName",
+    "posts": [],
+    "following": [],
+    "activity": []
+  },
+  {
+    "id": 5,
+    "username": "test",
+    "password": "Aa123",
+    "isAdmin": "true",
+    "firstName": "test",
+    "lastName": "testLastName",
+    "posts": [],
+    "following": [],
+    "activity": []
+  }
 ]
