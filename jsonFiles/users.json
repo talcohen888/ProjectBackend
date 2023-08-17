@@ -8,6 +8,7 @@
     "lastName": "testLastName",
     "posts": [],
     "following": [],
+    "followers": [],
     "activity": {}
   },
   {
@@ -19,6 +20,7 @@
     "lastName": "testLastName",
     "posts": [],
     "following": [],
+    "followers": [],
     "activity": {
       "8/12/2023, 6:29:00 PM": "login",
       "8/12/2023, 6:29:04 PM": "logout",
@@ -38,6 +40,7 @@
       2,
       4
     ],
+    "followers": [],
     "activity": {}
   },
   {
@@ -49,6 +52,7 @@
     "lastName": "testLastName",
     "posts": [],
     "following": [],
+    "followers": [],
     "activity": {}
   },
   {
@@ -59,7 +63,29 @@
     "firstName": "test",
     "lastName": "testLastName",
     "posts": [],
-    "following": [],
+    "following": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "followers": [],
     "activity": {}
+  },
+  {
+    "id": "dd8559c4-0ea5-4e93-8924-3b71b3fe1983",
+    "email": "admin",
+    "password": "$2a$10$FFEsQNeUqol6nwc5gU4MQOxqLe2E59Ks2JU1UBmIGBuWXsMp.U7.y",
+    "firstName": "Tom",
+    "lastName": "Cruise",
+    "image": "https://m.media-amazon.com/images/M/MV5BYTFlOTdjMjgtNmY0ZC00MDgxLThjNmEtZGIxZTQyZDdkMTRjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "location": "U.S.A",
+    "occupation": "Actor",
+    "following": [
+      4,
+      2,
+      5
+    ],
+    "followers": [],
+    "activity": {
+      "17/08/2023, 0:28:21": "LOGIN"
+    }
   }
 ]

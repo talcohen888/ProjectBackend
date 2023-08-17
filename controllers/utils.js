@@ -15,7 +15,7 @@ function writeDataToFile(filename, data) {
 function checkUserExists(userId) {
   const usersData = readDataFromFile('users.json');
   const userIndex = usersData.findIndex(user => user.id === userId);
-  
+
   if (userIndex === -1) {
     return false;
   }
@@ -35,7 +35,7 @@ function updateUserData(userData, newUserData) {
 function updateUserActivity(currentActivity, newActivityKey) {
   return {
     ...currentActivity,
-    [new Date().toLocaleString()] : newActivityKey
+    [new Date().toLocaleString()]: newActivityKey
   };
 }
 
