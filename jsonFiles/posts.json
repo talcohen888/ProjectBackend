@@ -47,5 +47,14 @@
     "insertionTime": "2023-08-12T14:36:52.724Z",
     "title": "hey10",
     "likesUserIds": []
+  },
+  {
+    "id": 123,
+    "userId": "dd8559c4-0ea5-4e93-8924-3b71b3fe1983",
+    "userName": "Tom Cruise",
+    "userImg": "https://m.media-amazon.com/images/M/MV5BYTFlOTdjMjgtNmY0ZC00MDgxLThjNmEtZGIxZTQyZDdkMTRjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+    "date": "2023-08-12T14:36:52.724Z",
+    "content": "This is a sample post",
+    "likes": 12
   }
 ]

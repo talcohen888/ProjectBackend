@@ -22,7 +22,7 @@ class PostsController {
 
         usersData[userIndex].posts.push(newPost.id);
         writeDataToFile('users.json', usersData);
-        
+
         res.status(200).json({
           status: "Success",
           data: newPost,
@@ -55,6 +55,19 @@ class PostsController {
       });
     }
   };
+
+  getUserPosts = (req, res) => {
+    try {
+      const postsData = readDataFromFile('posts.json');
+      const usersData = readDataFromFile('users.json');
+      const userId = req.params.id
+      const user = usersData.find((userData) => userData.id === userId)
+      const userPosts = postsData.filter((post) => user.posts.includes(post.id))
+      res.status(200).send(userPosts);
+    } catch (error) {
+      res.status(400).send("Internal Server Error");
+    }
+  }
 }
 
 const postsController = new PostsController();

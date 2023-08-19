@@ -8,7 +8,9 @@
     "lastName": "testLastName",
     "posts": [],
     "following": [],
-    "followers": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
     "activity": {}
   },
   {
@@ -78,14 +80,32 @@
     "image": "https://m.media-amazon.com/images/M/MV5BYTFlOTdjMjgtNmY0ZC00MDgxLThjNmEtZGIxZTQyZDdkMTRjXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
     "location": "U.S.A",
     "occupation": "Actor",
+    "posts": [
+      123
+    ],
     "following": [
       4,
-      2,
-      5
+      5,
+      1
     ],
+    "isAdmin": true,
     "followers": [],
     "activity": {
-      "17/08/2023, 0:28:21": "LOGIN"
+      "17/08/2023, 0:28:21": "LOGIN",
+      "18/08/2023, 0:42:08": "LOGIN",
+      "18/08/2023, 0:57:07": "LOGIN",
+      "18/08/2023, 16:34:23": "LOGIN",
+      "18/08/2023, 22:47:59": "LOGIN",
+      "18/08/2023, 22:51:56": "LOGIN",
+      "18/08/2023, 22:57:37": "LOGIN",
+      "18/08/2023, 22:58:42": "LOGIN",
+      "18/08/2023, 23:03:51": "LOGIN",
+      "18/08/2023, 23:07:54": "LOGIN",
+      "18/08/2023, 23:12:29": "LOGIN",
+      "19/08/2023, 10:17:29": "LOGIN",
+      "19/08/2023, 10:28:48": "LOGIN",
+      "19/08/2023, 17:02:11": "LOGIN",
+      "19/08/2023, 17:54:35": "LOGIN"
     }
   }
 ]

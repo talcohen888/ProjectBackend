@@ -98,6 +98,18 @@ class UsersController {
     }
   };
 
+  getUser = (req, res) => {
+    try {
+      const userId = req.params.id
+      const usersData = readDataFromFile("users.json");
+      const user = usersData.find((userData) => userData.id === userId)
+      res.status(200).send(user);
+    } catch (error) {
+      console.error(`getAllUsers: ${error}`)
+      res.status(500).send("Internal Error");
+    }
+  }
+
   addUserActivity = (req, res) => {
     try {
       const usersData = readDataFromFile("users.json");
@@ -214,7 +226,7 @@ class UsersController {
       const decoded = jwt.verify(token, JWT_SECRET_KEY);
       const users = readDataFromFile('users.json')
       const user = users.find(u => u.id === decoded.id);
-      console.log(user)
+
       if (!user) {
         return res.status(404).send({ message: 'User not found' });
       }
@@ -231,6 +243,20 @@ class UsersController {
     } catch (err) {
       console.error(`getActiveUser: ${err}`)
       res.status(500).send({ message: 'Error refreshing token', error: err });
+    }
+  };
+
+  deleteUser = async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const users = readDataFromFile('users.json');
+      const updatedUsers = users.filter(u => u.id !== userId);
+      writeDataToFile('users.json', updatedUsers);
+
+      res.status(200).send(updatedUsers);
+    } catch (err) {
+      console.error(`deleteUser: ${err}`)
+      res.status(500).send("Internal Error");
     }
   };
 

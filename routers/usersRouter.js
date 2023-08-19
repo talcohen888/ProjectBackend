@@ -4,10 +4,12 @@ const { usersController } = require('../controllers/usersController');
 const getUsersRouter = () => {
     usersRouter.post("/", usersController.addUser);
     usersRouter.get("/", usersController.getAllUsers);
+    usersRouter.get("/user", usersController.getActiveUser);
+    usersRouter.get("/:id", usersController.getUser);
     usersRouter.put("/activity/:id", usersController.addUserActivity);
     usersRouter.put("/:id", usersController.updateUser);
+    usersRouter.delete("/:id", usersController.deleteUser);
 
-    usersRouter.get("/user", usersController.getActiveUser);
     usersRouter.post("/register", usersController.register);
     usersRouter.post("/login", usersController.login);
     usersRouter.post("/logout", usersController.logout);

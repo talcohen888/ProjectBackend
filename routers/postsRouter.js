@@ -4,7 +4,8 @@ const { postsController } = require('../controllers/postsController');
 const getPostsRouter = () => {
     postsRouter.post("/:userId", postsController.addPost);
     postsRouter.get("/", postsController.getAllPosts);
-    
+    postsRouter.get("/:id", postsController.getUserPosts);
+
     return postsRouter;
 }
 
