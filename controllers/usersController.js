@@ -148,16 +148,13 @@ class UsersController {
       const users = readDataFromFile('users.json')
       const userIndex = users.findIndex(user => user.id === userId);
       const followUserIndex = users.findIndex(user => user.id === followUserId)
-      const user = users[userIndex];
 
-      if (!user) {
+      if (userIndex === -1 || followUserIndex === -1) {
         return res.status(400).send({ message: "User not found" });
       }
 
-      const followUser = users.find(user => user.id === followUserId);
-      if (!followUser) {
-        return res.status(400).send({ message: "User to follow not found" });
-      }
+      const user = users[userIndex];
+      const followUser = users[followUserIndex]
 
       if (user.following.includes(followUserId)) {
         return res.status(400).send({ message: "Already following this user" });
@@ -183,15 +180,12 @@ class UsersController {
       const users = readDataFromFile('users.json')
       const userIndex = users.findIndex(user => user.id === userId);
       const unfollowUserIndex = users.findIndex(user => user.id === unfollowUserId)
-      const user = users[userIndex];
-      if (!user) {
+      if (userIndex === -1 || unfollowUserIndex === -1) {
         return res.status(400).send({ message: "User not found" });
       }
 
-      const unfollowUser = users.find(user => user.id === unfollowUserId);
-      if (!unfollowUser) {
-        return res.status(400).send({ message: "User to follow not found" });
-      }
+      const user = users[userIndex];
+      const unfollowUser = users[unfollowUserId]
 
       if (!user.following.includes(unfollowUserId)) {
         return res.status(400).send({ message: "Not following this user" });
@@ -231,9 +225,10 @@ class UsersController {
         return res.status(404).send({ message: 'User not found' });
       }
 
+      const expiresIn = user.rememberMe ? '10d' : '30m';
+
       const { password, ...userWithoutPassword } = user;
-      // need to change expires time to be by remember me
-      const newToken = jwt.sign({ id: decoded.id }, JWT_SECRET_KEY, { expiresIn: '1h' });
+      const newToken = jwt.sign({ id: decoded.id }, JWT_SECRET_KEY, { expiresIn: expiresIn });
 
       res.cookie('token', newToken, { httpOnly: true });
 
@@ -264,11 +259,12 @@ class UsersController {
     const { email, password, rememberMe } = req.body;
 
     const usersData = readDataFromFile("users.json");
-    const user = usersData.find(user => user.email === email);
-    if (!user) {
+    const userIndex = usersData.findIndex(user => user.email === email);
+    if (userIndex === -1) {
       return res.status(401).send('Invalid email or password');
     }
 
+    const user = usersData[userIndex]
     const passwordIsValid = await bcrypt.compare(password, user.password);
 
     if (!passwordIsValid) {
@@ -276,6 +272,12 @@ class UsersController {
     }
 
     const expiresIn = rememberMe ? '10d' : '30m';
+
+    if (user['rememberMe'] === undefined || user['rememberMe'] !== rememberMe) {
+      user['rememberMe'] = rememberMe;
+      usersData[userIndex] = user
+      writeDataToFile('users.json', usersData)
+    }
 
     const token = jwt.sign({ id: user.id }, JWT_SECRET_KEY, { expiresIn });
 
