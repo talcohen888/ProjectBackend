@@ -6,6 +6,7 @@ const getUsersRouter = () => {
     usersRouter.get("/", usersController.getAllUsers);
     usersRouter.get("/user", usersController.getActiveUser);
     usersRouter.get("/:id", usersController.getUser);
+    usersRouter.get("/suggest/:id", usersController.getFriendsSuggestions);
     usersRouter.put("/activity/:id", usersController.addUserActivity);
     usersRouter.put("/:id", usersController.updateUser);
     usersRouter.delete("/:id", usersController.deleteUser);

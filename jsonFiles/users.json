@@ -1,79 +1,5 @@
 [
   {
-    "id": 2,
-    "username": "test",
-    "password": "Aa123",
-    "isAdmin": "true",
-    "firstName": "test",
-    "lastName": "testLastName",
-    "posts": [],
-    "following": [],
-    "followers": [],
-    "activity": {
-      "8/12/2023, 6:29:00 PM": "login",
-      "8/12/2023, 6:29:04 PM": "logout",
-      "8/12/2023, 6:29:06 PM": "logout"
-    }
-  },
-  {
-    "id": 2,
-    "username": "test",
-    "password": "Aa123",
-    "isAdmin": "true",
-    "firstName": "test",
-    "lastName": "testLastName",
-    "posts": [],
-    "following": [],
-    "followers": [],
-    "activity": {
-      "8/12/2023, 6:29:00 PM": "login",
-      "8/12/2023, 6:29:04 PM": "logout",
-      "8/12/2023, 6:29:06 PM": "logout"
-    }
-  },
-  {
-    "id": 3,
-    "username": "test",
-    "password": "Aa123",
-    "isAdmin": "true",
-    "firstName": "tal",
-    "lastName": "22",
-    "posts": [],
-    "following": [
-      1,
-      2,
-      4
-    ],
-    "followers": [],
-    "activity": {}
-  },
-  {
-    "id": 4,
-    "username": "test",
-    "password": "Aa123",
-    "isAdmin": "true",
-    "firstName": "test",
-    "lastName": "testLastName",
-    "posts": [],
-    "following": [],
-    "followers": [],
-    "activity": {}
-  },
-  {
-    "id": 5,
-    "username": "test",
-    "password": "Aa123",
-    "isAdmin": "true",
-    "firstName": "test",
-    "lastName": "testLastName",
-    "posts": [],
-    "following": [
-      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
-    ],
-    "followers": [],
-    "activity": {}
-  },
-  {
     "id": "dd8559c4-0ea5-4e93-8924-3b71b3fe1983",
     "email": "admin",
     "password": "$2a$10$FFEsQNeUqol6nwc5gU4MQOxqLe2E59Ks2JU1UBmIGBuWXsMp.U7.y",
@@ -86,9 +12,10 @@
       123
     ],
     "following": [
-      4,
-      5,
-      2
+      "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
+      "fd8534d2-1e56-4a95-9932-2b74a3bc1123",
+      "gd8635e3-1f57-4b96-9943-2c75a3bd1134",
+      "jb4968h6-4i80-7e09-1c76-5f08e6eg1467"
     ],
     "isAdmin": true,
     "followers": [],
@@ -119,8 +46,329 @@
       "20/08/2023, 19:59:34": "LOGIN",
       "20/08/2023, 20:05:59": "LOGIN",
       "21/08/2023, 1:15:09": "LOGIN",
-      "21/08/2023, 1:15:52": "LOGIN"
+      "21/08/2023, 1:15:52": "LOGIN",
+      "21/08/2023, 14:38:38": "LOGIN",
+      "21/08/2023, 19:20:50": "LOGIN"
     },
+    "rememberMe": true
+  },
+  {
+    "id": "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
+    "email": "jenniferaniston@email.com",
+    "password": "$2a$10$FFEsQNeUqol6nwc5gU4MQOxqLe2E59Ks2JU1UBmIGBuWXsMp.U7.y",
+    "firstName": "Jennifer",
+    "lastName": "Aniston",
+    "image": "https://m.media-amazon.com/images/J/JV5BYTFlOTdjMjgtNmY0ZC.jpg",
+    "location": "U.S.A",
+    "occupation": "Actress",
+    "posts": [
+      124
+    ],
+    "following": [],
+    "isAdmin": true,
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "activity": {
+      "17/08/2023, 0:30:22": "REGISTER",
+      "18/08/2023, 0:45:09": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "fd8534d2-1e56-4a95-9932-2b74a3bc1123",
+    "email": "robertdowney@email.com",
+    "password": "$2a$10$GFeRQNeZqol7nwc5gV5LQOxqLe3E59Ks2JU2UBnJGBvWXsMp.U8.z",
+    "firstName": "Robert",
+    "lastName": "Downey Jr.",
+    "image": "https://example.com/images/robertdowney.jpg",
+    "location": "U.S.A",
+    "occupation": "Actor",
+    "posts": [
+      125
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "activity": {
+      "17/08/2023, 2:20:15": "REGISTER",
+      "18/08/2023, 2:50:10": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "gd8635e3-1f57-4b96-9943-2c75a3bd1134",
+    "email": "scarlettjohansson@email.com",
+    "password": "$2a$10$GGeTQOeZrol8nwc6gW6MQOxrLe4F60Kt3JU3VCkKGBwYXsNq.V9.a",
+    "firstName": "Scarlett",
+    "lastName": "Johansson",
+    "image": "https://example.com/images/scarlettjohansson.jpg",
+    "location": "U.S.A",
+    "occupation": "Actress",
+    "posts": [
+      126
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "activity": {
+      "17/08/2023, 3:25:16": "REGISTER",
+      "18/08/2023, 3:55:11": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "ha8746f4-2g68-5c07-9a54-3d86b4ce1245",
+    "email": "chrispratt@email.com",
+    "password": "$2a$10$HHeUQPeZsol9nwd7hX7NQOxrLf5G70Lt4JU4VDlLGBxZXsOr.W0.b",
+    "firstName": "Chris",
+    "lastName": "Pratt",
+    "image": "https://example.com/images/chrispratt.jpg",
+    "location": "U.S.A",
+    "occupation": "Actor",
+    "posts": [
+      127
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 4:30:17": "REGISTER",
+      "18/08/2023, 5:00:12": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "ib9857g5-3h79-6d08-0b65-4e97d5df1356",
+    "email": "jenniferlawrence@email.com",
+    "password": "$2a$10$IJeVQReZtol0nwe8iY8MQOxrLg6H80Mu5JU5WEoMGCzYXsPs.X1.c",
+    "firstName": "Jennifer",
+    "lastName": "Lawrence",
+    "image": "https://example.com/images/jenniferlawrence.jpg",
+    "location": "U.S.A",
+    "occupation": "Actress",
+    "posts": [
+      128
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 6:35:18": "REGISTER",
+      "18/08/2023, 7:05:13": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "jb4968h6-4i80-7e09-1c76-5f08e6eg1467",
+    "email": "leonardodicaprio@email.com",
+    "password": "$2a$10$JKeWQSeZvol1nwf9jZ9NQOxrLh7I90Nv6JU6XFpNGD0ZXsQt.Y2.d",
+    "firstName": "Leonardo",
+    "lastName": "DiCaprio",
+    "image": "https://example.com/images/leonardodicaprio.jpg",
+    "location": "U.S.A",
+    "occupation": "Actor",
+    "posts": [
+      129
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "activity": {
+      "17/08/2023, 8:40:19": "REGISTER",
+      "18/08/2023, 9:10:14": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "ac4970i7-5j91-8f10-2d87-6g09f7gh1578",
+    "email": "merylstreep@email.com",
+    "password": "$2a$10$KLeTQRfZwol2nwg0kZ0NQOxrLi8J01Ow7JU7YGoOGD1ZXsRt.Z3.e",
+    "firstName": "Meryl",
+    "lastName": "Streep",
+    "image": "https://example.com/images/merylstreep.jpg",
+    "location": "U.S.A",
+    "occupation": "Actress",
+    "posts": [
+      130
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 10:45:20": "REGISTER",
+      "18/08/2023, 11:15:15": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "bd5081j8-6k02-9g11-3e98-7h10i8ij1689",
+    "email": "lebronjames@email.com",
+    "password": "$2a$10$LMeUSRgZwpl3nxi1lZ1NQOxrLj9K02Px8JU8ZHpPHD2ZXsSu.A4.f",
+    "firstName": "LeBron",
+    "lastName": "James",
+    "image": "https://example.com/images/lebronjames.jpg",
+    "location": "U.S.A",
+    "occupation": "Basketball Player",
+    "posts": [
+      131
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 12:50:21": "REGISTER",
+      "18/08/2023, 1:20:16": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "ce6192k9-7l03-0h12-4f09-8i11j9kl1790",
+    "email": "spielberg@email.com",
+    "password": "$2a$10$MMvVSShZxql4oyj2mZ2OQOxrLk0L03Qy9JU9AItQIE3ZXsTv.B5.g",
+    "firstName": "Steven",
+    "lastName": "Spielberg",
+    "image": "https://example.com/images/spielberg.jpg",
+    "location": "U.S.A",
+    "occupation": "Director",
+    "posts": [
+      132
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 2:55:22": "REGISTER",
+      "18/08/2023, 3:25:17": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "df7304l0-8m04-1i13-5g10-9j12k0lm1891",
+    "email": "jkrowling@email.com",
+    "password": "$2a$10$NNeWSTiZyrm5pzj3oZ3PQOxrLl1M04Rz0JU0BJuRJF4ZXsUw.C6.h",
+    "firstName": "J.K.",
+    "lastName": "Rowling",
+    "image": "https://example.com/images/jkrowling.jpg",
+    "location": "U.K.",
+    "occupation": "Writer",
+    "posts": [
+      133
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 5:00:23": "REGISTER",
+      "18/08/2023, 5:30:18": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "eg8415m1-9n05-2j14-6h11-0k13l1mn1992",
+    "email": "cristiano@email.com",
+    "password": "$2a$10$OOxXUjZzsnm6qzk4pZ4QOxrLm2N05Sy1JU1CKvSKGF5ZXsVx.D7.i",
+    "firstName": "Cristiano",
+    "lastName": "Ronaldo",
+    "image": "https://example.com/images/cristiano.jpg",
+    "location": "Portugal",
+    "occupation": "Footballer",
+    "posts": [
+      134
+    ],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {
+      "17/08/2023, 7:05:24": "REGISTER",
+      "18/08/2023, 7:35:19": "LOGIN"
+    },
+    "rememberMe": true
+  },
+  {
+    "id": "ii3457d8-7y9f-5g67-9a34-8y69d7kk0208",
+    "email": "tarantino@email.com",
+    "password": "$2a$10$JkdGTWeErok7nxc6hY4NROsuvR2F72Lu1JH4UEjLJGyWXsRt.Y7.y",
+    "firstName": "Quentin",
+    "lastName": "Tarantino",
+    "image": "https://someimageurl.com/quentin-tarantino.jpg",
+    "location": "U.S.A",
+    "occupation": "Director",
+    "posts": [],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {},
+    "rememberMe": true
+  },
+  {
+    "id": "jj4358d1-8t0g-6h89-9b34-9z70e8ll0309",
+    "email": "grrmartin@email.com",
+    "password": "$2a$10$KleITXeFrol7oxc9iY5MROvuwS3G71Lu2JH5UDmLKCyYWsRv.Z8.v",
+    "firstName": "George",
+    "lastName": "R.R. Martin",
+    "image": "https://someimageurl.com/george-rr-martin.jpg",
+    "location": "U.S.A",
+    "occupation": "Writer",
+    "posts": [],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {},
+    "rememberMe": true
+  },
+  {
+    "id": "kk4958d3-9u1h-7i90-8c45-0z81f9mm0401",
+    "email": "messi@email.com",
+    "password": "$2a$10$MnfJTXeGrol8pxd0jZ6NROwvxT4H70Lv3JH6UFnMKDzXWsRw.Z9.w",
+    "firstName": "Lionel",
+    "lastName": "Messi",
+    "image": "https://someimageurl.com/lionel-messi.jpg",
+    "location": "Argentina",
+    "occupation": "Athlete",
+    "posts": [],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {},
+    "rememberMe": true
+  },
+  {
+    "id": "ll5259d5-0v2i-8j01-7d56-1z92g0nn0502",
+    "email": "nolan@email.com",
+    "password": "$2a$10$OnfKTXeHrol9qye1kA7OROxvyU5I69Lw4JH7UGoLOEzXVsRx.0a.x",
+    "firstName": "Christopher",
+    "lastName": "Nolan",
+    "image": "https://someimageurl.com/christopher-nolan.jpg",
+    "location": "U.K.",
+    "occupation": "Director",
+    "posts": [],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {},
+    "rememberMe": true
+  },
+  {
+    "id": "mm5550d4-1w3j-9k12-6e67-2a03h1oo0603",
+    "email": "rowling2@email.com",
+    "password": "$2a$10$PpfLUXeIroo0rzf2lB8OSOyzyV6J68Mx5JH8UHpMPFzYUsSy.1b.y",
+    "firstName": "Joanne",
+    "lastName": "Rowling",
+    "image": "https://someimageurl.com/joanne-rowling.jpg",
+    "location": "U.K.",
+    "occupation": "Writer",
+    "posts": [],
+    "following": [],
+    "isAdmin": false,
+    "followers": [],
+    "activity": {},
     "rememberMe": true
   }
 ]

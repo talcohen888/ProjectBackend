@@ -40,10 +40,31 @@ class UsersController {
 
   getAllUsers = (req, res) => {
     try {
+      const activeUserId = req.query.id;
       const usersData = readDataFromFile("users.json");
-      res.status(200).send(usersData);
+      const users = []
+      usersData.forEach((user) => {
+        if (user.id !== activeUserId) {
+          const { password, ...userWithoutPassword } = user;
+          users.push(userWithoutPassword);
+        }
+      })
+      res.status(200).send(users);
     } catch (error) {
       console.error(`getAllUsers: ${error}`)
+      res.status(500).send("Internal Error");
+    }
+  };
+
+  getFriendsSuggestions = (req, res) => {
+    try {
+      const userId = req.params.id
+      const usersData = readDataFromFile("users.json");
+      const user = usersData.find((userData) => userData.id === userId);
+      const unfollowedUsers = usersData.filter((userData) => !user.following.includes(userData.id) && userData.id !== userId).slice(0, 5);
+      res.status(200).send(unfollowedUsers);
+    } catch (error) {
+      console.error(`getFriendsSuggestions: ${error}`)
       res.status(500).send("Internal Error");
     }
   };
@@ -105,7 +126,7 @@ class UsersController {
       const user = usersData.find((userData) => userData.id === userId)
       res.status(200).send(user);
     } catch (error) {
-      console.error(`getAllUsers: ${error}`)
+      console.error(`getUser: ${error}`)
       res.status(500).send("Internal Error");
     }
   }
@@ -143,7 +164,7 @@ class UsersController {
   followUser = async (req, res) => {
     try {
 
-      const { userId, followUserId } = req.body;
+      const { userId, followUserId, isSuggestion } = req.body;
 
       const users = readDataFromFile('users.json')
       const userIndex = users.findIndex(user => user.id === userId);
@@ -164,8 +185,15 @@ class UsersController {
       followUser.followers.push(userId)
       users[userIndex] = user
       users[followUserIndex] = followUser
-      writeDataToFile('users.json', users)
 
+      if (isSuggestion) {
+        const unfollowedUsers = users.filter((userData) => !user.following.includes(userData.id) && userData.id !== user.id).slice(0, 5);
+        res.status(200).send(unfollowedUsers);
+        writeDataToFile('users.json', users)
+        return;
+      }
+
+      writeDataToFile('users.json', users)
       res.status(200).send({ message: "Successfully followed user" });
     } catch (error) {
       console.error(`followUser: ${error}`)
@@ -201,7 +229,7 @@ class UsersController {
 
       res.status(200).send({ message: "Successfully followed user" });
     } catch (error) {
-      console.error(`followUser: ${error}`)
+      console.error(`unfollowUser: ${error}`)
       res.status(500).send('Internal Server Error')
     }
   };
