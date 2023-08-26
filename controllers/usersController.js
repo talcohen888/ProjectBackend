@@ -180,9 +180,9 @@ class UsersController {
     try {
       const { userId, unfollowUserId } = req.body;
 
-      const users = readDataFromFile('users.json')
+      const users = readDataFromFile('users.json');
       const userIndex = users.findIndex(user => user.id === userId);
-      const unfollowUserIndex = users.findIndex(user => user.id === unfollowUserId)
+      const unfollowUserIndex = users.findIndex(user => user.id === unfollowUserId);
       const user = users[userIndex];
       if (!user) {
         return res.status(400).send({ message: "User not found" });

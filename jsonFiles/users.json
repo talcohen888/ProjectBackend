@@ -37,11 +37,7 @@
     "firstName": "tal",
     "lastName": "22",
     "posts": [],
-    "following": [
-      1,
-      2,
-      4
-    ],
+    "following": [],
     "followers": [],
     "activity": {}
   },
@@ -81,13 +77,10 @@
     "location": "U.S.A",
     "occupation": "Actor",
     "posts": [
-      123
+      3,
+      4
     ],
-    "following": [
-      4,
-      5,
-      1
-    ],
+    "following": [],
     "isAdmin": true,
     "followers": [],
     "activity": {
@@ -105,7 +98,31 @@
       "19/08/2023, 10:17:29": "LOGIN",
       "19/08/2023, 10:28:48": "LOGIN",
       "19/08/2023, 17:02:11": "LOGIN",
-      "19/08/2023, 17:54:35": "LOGIN"
+      "19/08/2023, 17:54:35": "LOGIN",
+      "8/21/2023, 9:09:40 AM": "LOGIN",
+      "8/21/2023, 9:50:06 PM": "LOGIN",
+      "8/21/2023, 9:53:43 PM": "LOGIN",
+      "8/21/2023, 10:18:39 PM": "LOGIN",
+      "8/22/2023, 3:21:51 PM": "LOGIN",
+      "8/22/2023, 3:28:22 PM": "LOGIN",
+      "8/22/2023, 3:30:27 PM": "LOGIN"
+    }
+  },
+  {
+    "id": "e8d9c22b-5ebc-4829-8f47-0d740986a27e",
+    "email": "t@t.t",
+    "password": "$2a$10$Tp90svHmwkva7TtiayKGW.E9hVbYTW.3ZszIm3dCK7yJv6ngtUA9m",
+    "firstName": "test",
+    "lastName": "user",
+    "location": "israel",
+    "occupation": "test",
+    "posts": [
+      6
+    ],
+    "following": ["dd8559c4-0ea5-4e93-8924-3b71b3fe1983"],
+    "followers": [],
+    "activity": {
+      "8/22/2023, 3:44:09 PM": "LOGIN"
     }
   }
 ]

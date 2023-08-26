@@ -39,4 +39,10 @@ function updateUserActivity(currentActivity, newActivityKey) {
   };
 }
 
-module.exports = { readDataFromFile, writeDataToFile, checkUserExists, updateUserData, updateUserActivity };
+function getUserName(userId) {
+  const usersData = readDataFromFile('users.json');
+  const userIndex = usersData.findIndex(user => user.id === userId);
+  return usersData[userIndex].username;
+}
+
+module.exports = { readDataFromFile, writeDataToFile, checkUserExists, updateUserData, updateUserActivity, getUserName };
