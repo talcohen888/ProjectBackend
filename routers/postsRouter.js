@@ -3,8 +3,12 @@ const { postsController } = require('../controllers/postsController');
 
 const getPostsRouter = () => {
     postsRouter.post("/:userId", postsController.addPost);
+
+    postsRouter.get("/getUserHomePosts/:userId", postsController.getUserHomepagePosts);
+    postsRouter.get("/:userId", postsController.getUserPosts);
     postsRouter.get("/", postsController.getAllPosts);
-    postsRouter.get("/:id", postsController.getUserPosts);
+
+    postsRouter.put("/like/:postId/:userId", postsController.addLikeToPost);
 
     return postsRouter;
 }

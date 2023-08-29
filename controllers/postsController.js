@@ -1,28 +1,38 @@
-const { readDataFromFile, writeDataToFile } = require("./utils");
+const { readDataFromFile, writeDataToFile, getUserName } = require("./utils");
 
 class PostsController {
   addPost = (req, res) => {
     try {
+      const postContent = req.body.content;
+      if (length(postContent)) {
+        res.status(400).json({
+          status: "Post too long",
+          message: error,
+        });
+      }
       const postsData = readDataFromFile('posts.json');
-
-      const newPost = {
-        id: postsData.length + 1,
-        insertionTime: new Date().toISOString(),
-        ...req.body,
-        likesUserIds: []
-      };
-
-      const userId = parseInt(req.params.userId);
+      const userId = req.params.userId;
       const usersData = readDataFromFile('users.json');
       const userIndex = usersData.findIndex(user => user.id === userId);
-
+      
       if (userIndex !== -1) {
+        const userName = getUserName(userId);
+        const newPost = {
+          id: postsData.length + 1,
+          userId: userId,
+          userName: userName,
+          insertionTime: new Date().toISOString(),
+          content: postContent,
+          likesUserIds: []
+        };
+        
+        
         postsData.push(newPost);
         writeDataToFile('posts.json', postsData);
-
+        
         usersData[userIndex].posts.push(newPost.id);
         writeDataToFile('users.json', usersData);
-
+        
         res.status(200).json({
           status: "Success",
           data: newPost,
@@ -60,12 +70,70 @@ class PostsController {
     try {
       const postsData = readDataFromFile('posts.json');
       const usersData = readDataFromFile('users.json');
-      const userId = req.params.id
+      const userId = req.params.userId
       const user = usersData.find((userData) => userData.id === userId)
       const userPosts = postsData.filter((post) => user.posts.includes(post.id))
       res.status(200).send(userPosts);
     } catch (error) {
       res.status(400).send("Internal Server Error");
+    }
+  }
+  
+  getUserHomepagePosts = (req, res) => {
+    try {
+      
+      const userId = req.params.userId;
+      const usersData = readDataFromFile('users.json');
+      const user = usersData.find(user => user.id === userId);
+      
+      if (!user) {
+        return res.status(404).json({
+          status: 'Failed',
+          message: 'User not found',
+        });
+      }
+      
+      const postsData = readDataFromFile('posts.json');
+      const postsOfActiveUser = postsData.filter(post => user.posts.includes(post.id));
+      const postsOfFollowingUsers = postsData.filter(post => user.following.includes(post.userId));
+      
+      const allUserPosts = [...postsOfActiveUser, ...postsOfFollowingUsers];
+      allUserPosts.sort((postA, postB) => {
+        const dateA = new Date(postA.insertionTime);
+        const dateB = new Date(postB.insertionTime);
+        return dateB - dateA;
+      });
+
+      res.status(200).json({
+        status: 'Success',
+        data: allUserPosts,
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: 'Failed',
+        message: 'Internal Server Error',
+      });
+    }
+  }
+ 
+  addLikeToPost = (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const postId = parseInt(req.params.postId);
+      const postsData = readDataFromFile('posts.json');
+      const post = postsData.find(post => post.id === postId);
+
+      // TODO: continue
+
+      res.status(200).json({
+        status: 'Success',
+        data: allUserPosts,
+      });
+    } catch (error) {
+      res.status(400).json({
+        status: 'Failed',
+        message: 'Internal Server Error',
+      });
     }
   }
 }

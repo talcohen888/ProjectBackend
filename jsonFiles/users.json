@@ -9,13 +9,28 @@
     "location": "U.S.A",
     "occupation": "Actor",
     "posts": [
-      123
+      123,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
     ],
     "following": [
       "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
       "fd8534d2-1e56-4a95-9932-2b74a3bc1123",
       "gd8635e3-1f57-4b96-9943-2c75a3bd1134",
-      "jb4968h6-4i80-7e09-1c76-5f08e6eg1467"
+      "jb4968h6-4i80-7e09-1c76-5f08e6eg1467",
+      "ha8746f4-2g68-5c07-9a54-3d86b4ce1245",
+      "ib9857g5-3h79-6d08-0b65-4e97d5df1356"
     ],
     "isAdmin": true,
     "followers": [],
@@ -48,9 +63,16 @@
       "21/08/2023, 1:15:09": "LOGIN",
       "21/08/2023, 1:15:52": "LOGIN",
       "21/08/2023, 14:38:38": "LOGIN",
-      "21/08/2023, 19:20:50": "LOGIN"
+      "21/08/2023, 19:20:50": "LOGIN",
+      "8/26/2023, 7:31:41 PM": "LOGIN",
+      "8/26/2023, 7:46:13 PM": "LOGIN",
+      "8/26/2023, 7:48:50 PM": "LOGIN",
+      "8/26/2023, 7:49:56 PM": "LOGIN",
+      "8/28/2023, 8:23:48 AM": "LOGIN",
+      "8/28/2023, 8:48:03 AM": "LOGOUT",
+      "8/28/2023, 8:59:50 AM": "LOGIN"
     },
-    "rememberMe": true
+    "rememberMe": false
   },
   {
     "id": "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
@@ -135,7 +157,9 @@
     ],
     "following": [],
     "isAdmin": false,
-    "followers": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
     "activity": {
       "17/08/2023, 4:30:17": "REGISTER",
       "18/08/2023, 5:00:12": "LOGIN"
@@ -156,7 +180,9 @@
     ],
     "following": [],
     "isAdmin": false,
-    "followers": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
     "activity": {
       "17/08/2023, 6:35:18": "REGISTER",
       "18/08/2023, 7:05:13": "LOGIN"
@@ -370,5 +396,17 @@
     "followers": [],
     "activity": {},
     "rememberMe": true
+  },
+  {
+    "id": "1cd77c38-7698-432e-b006-a8ed6324b962",
+    "email": "talorcoh@gmail.com",
+    "password": "$2a$10$BTSo2zwsq6kw7izlU2wH/uosmGu5u8aJN0bwiRBCgCzPtryDcr8uG",
+    "firstName": "tal",
+    "lastName": "cohen",
+    "location": "israel",
+    "occupation": "be",
+    "following": [],
+    "followers": [],
+    "activity": []
   }
 ]
