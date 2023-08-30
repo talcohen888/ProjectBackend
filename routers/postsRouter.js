@@ -9,6 +9,7 @@ const getPostsRouter = () => {
     postsRouter.get("/", postsController.getAllPosts);
 
     postsRouter.put("/like/:postId/:userId", postsController.addLikeToPost);
+    postsRouter.put("/edit/:postId", postsController.updateContentPost);
 
     return postsRouter;
 }
