@@ -213,7 +213,7 @@ class UsersController {
       }
 
       const user = users[userIndex];
-      const unfollowUser = users[unfollowUserId]
+      const unfollowUser = users[unfollowUserIndex]
 
       if (!user.following.includes(unfollowUserId)) {
         return res.status(400).send({ message: "Not following this user" });
@@ -284,33 +284,39 @@ class UsersController {
   };
 
   login = async (req, res) => {
-    const { email, password, rememberMe } = req.body;
+    try {
+      const { email, userPassword, rememberMe } = req.body;
 
-    const usersData = readDataFromFile("users.json");
-    const userIndex = usersData.findIndex(user => user.email === email);
-    if (userIndex === -1) {
-      return res.status(401).send('Invalid email or password');
+      const usersData = readDataFromFile("users.json");
+      const userIndex = usersData.findIndex(user => user.email === email);
+      if (userIndex === -1) {
+        return res.status(401).send('Invalid email or password');
+      }
+
+      const user = usersData[userIndex]
+      const passwordIsValid = await bcrypt.compare(userPassword, user.password);
+
+      if (!passwordIsValid) {
+        return res.status(401).send('Invalid email or password');
+      }
+
+      const expiresIn = rememberMe ? '10d' : '30m';
+
+      if (user['rememberMe'] === undefined || user['rememberMe'] !== rememberMe) {
+        user['rememberMe'] = rememberMe;
+        usersData[userIndex] = user
+        writeDataToFile('users.json', usersData)
+      }
+
+      const token = jwt.sign({ id: user.id }, JWT_SECRET_KEY, { expiresIn });
+      const { password, ...userWithoutPassword } = user;
+
+      res.cookie('token', token, { httpOnly: true, maxAge: rememberMe ? 10 * 24 * 60 * 60 * 1000 : 30 * 60 * 1000 });
+      res.status(200).send({ token, user: userWithoutPassword });
+    } catch (error) {
+      console.error(`login: ${err}`)
+      res.status(500).send(err);
     }
-
-    const user = usersData[userIndex]
-    const passwordIsValid = await bcrypt.compare(password, user.password);
-
-    if (!passwordIsValid) {
-      return res.status(401).send('Invalid email or password');
-    }
-
-    const expiresIn = rememberMe ? '10d' : '30m';
-
-    if (user['rememberMe'] === undefined || user['rememberMe'] !== rememberMe) {
-      user['rememberMe'] = rememberMe;
-      usersData[userIndex] = user
-      writeDataToFile('users.json', usersData)
-    }
-
-    const token = jwt.sign({ id: user.id }, JWT_SECRET_KEY, { expiresIn });
-
-    res.cookie('token', token, { httpOnly: true, maxAge: rememberMe ? 10 * 24 * 60 * 60 * 1000 : 30 * 60 * 1000 });
-    res.status(200).send({ token, user });
   };
 
   logout = (req, res) => {
@@ -322,10 +328,14 @@ class UsersController {
     const { email, password, userInfo } = req.body;
     const { firstName, lastName, image, location, occupation } = userInfo
 
-    // need to add validation
-
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
+
+      const usersData = readDataFromFile("users.json");
+      const userExist = usersData.some(user => user.email === email);
+      if (userExist) {
+        return res.status(409).send('User already exist');
+      }
 
       const user = {
         id: uuidv4(),
@@ -338,14 +348,17 @@ class UsersController {
         occupation,
         following: [],
         followers: [],
-        activity: []
+        activity: [],
+        isAdmin: false,
+        posts: [],
+        rememberMe: false,
       };
 
       const users = readDataFromFile("users.json")
       users.push(user)
-      writeDataToFile('users.json', users)
 
-      res.status(200).send({ message: "User successfully created" });
+      writeDataToFile('users.json', users)
+      res.status(200).send(user);
     } catch (err) {
       console.error(`register: ${err}`)
       res.status(500).send(err);

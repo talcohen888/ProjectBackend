@@ -37,64 +37,36 @@
       5,
       6,
       7,
-      8
+      8,
+      10,
+      11,
+      12,
+      13,
+      14
     ],
     "following": [
-      "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
       "fd8534d2-1e56-4a95-9932-2b74a3bc1123",
       "gd8635e3-1f57-4b96-9943-2c75a3bd1134",
       "jb4968h6-4i80-7e09-1c76-5f08e6eg1467",
-      "ha8746f4-2g68-5c07-9a54-3d86b4ce1245",
-      "ib9857g5-3h79-6d08-0b65-4e97d5df1356"
+      "ac4970i7-5j91-8f10-2d87-6g09f7gh1578",
+      "141d2f4f-ef6e-4fd4-8c34-b2f95e4e60d1",
+      "ib9857g5-3h79-6d08-0b65-4e97d5df1356",
+      "bd5081j8-6k02-9g11-3e98-7h10i8ij1689"
     ],
     "isAdmin": true,
-    "followers": [],
+    "followers": [
+      "628f9919-9573-4f12-bfec-dcef27afb334",
+      "f9555725-8bcc-4b62-8a4e-ac93b1a1b42b"
+    ],
     "activity": {
-      "17/08/2023, 0:28:21": "LOGIN",
-      "18/08/2023, 0:42:08": "LOGIN",
-      "18/08/2023, 0:57:07": "LOGIN",
-      "18/08/2023, 16:34:23": "LOGIN",
-      "18/08/2023, 22:47:59": "LOGIN",
-      "18/08/2023, 22:51:56": "LOGIN",
-      "18/08/2023, 22:57:37": "LOGIN",
-      "18/08/2023, 22:58:42": "LOGIN",
-      "18/08/2023, 23:03:51": "LOGIN",
-      "18/08/2023, 23:07:54": "LOGIN",
-      "18/08/2023, 23:12:29": "LOGIN",
       "19/08/2023, 10:17:29": "LOGIN",
       "19/08/2023, 10:28:48": "LOGIN",
       "19/08/2023, 17:02:11": "LOGIN",
-      "19/08/2023, 17:54:35": "LOGIN",
-      "20/08/2023, 8:33:14": "LOGIN",
-      "20/08/2023, 19:12:48": "LOGIN",
-      "20/08/2023, 19:38:44": "LOGIN",
-      "20/08/2023, 19:51:10": "LOGIN",
-      "20/08/2023, 19:53:23": "LOGIN",
-      "20/08/2023, 19:54:16": "LOGIN",
-      "20/08/2023, 19:56:06": "LOGIN",
-      "20/08/2023, 19:59:22": "LOGIN",
-      "20/08/2023, 19:59:34": "LOGIN",
-      "20/08/2023, 20:05:59": "LOGIN",
-      "21/08/2023, 1:15:09": "LOGIN",
-      "21/08/2023, 1:15:52": "LOGIN",
-      "21/08/2023, 14:38:38": "LOGIN",
-      "21/08/2023, 19:20:50": "LOGIN",
-      "8/26/2023, 7:31:41 PM": "LOGIN",
-      "8/26/2023, 7:46:13 PM": "LOGIN",
-      "8/26/2023, 7:48:50 PM": "LOGIN",
-      "8/26/2023, 7:49:56 PM": "LOGIN",
-      "8/28/2023, 8:23:48 AM": "LOGIN",
-      "8/28/2023, 8:48:03 AM": "LOGOUT",
-      "8/28/2023, 8:59:50 AM": "LOGIN",
-      "8/29/2023, 8:55:09 AM": "LOGIN",
-      "8/29/2023, 9:25:57 AM": "LOGOUT",
-      "8/29/2023, 9:25:58 AM": "LOGIN",
-      "8/30/2023, 4:31:09 PM": "LOGIN",
-      "8/30/2023, 5:10:45 PM": "LOGOUT",
-      "8/30/2023, 5:11:15 PM": "LOGIN",
-      "8/30/2023, 7:02:59 PM": "LOGIN"
+      "19/08/2023, 17:03:11": "LOGOUT",
+      "29/08/2023, 17:02:11": "LOGIN",
+      "01/09/2023, 20:00:57": "CREATE POST"
     },
-    "rememberMe": false
+    "rememberMe": true
   },
   {
     "id": "ed6659e4-1ea7-4e93-8974-4a71b3fe1193",
@@ -110,9 +82,7 @@
     ],
     "following": [],
     "isAdmin": true,
-    "followers": [
-      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
-    ],
+    "followers": [],
     "activity": {
       "17/08/2023, 0:30:22": "REGISTER",
       "18/08/2023, 0:45:09": "LOGIN"
@@ -179,9 +149,7 @@
     ],
     "following": [],
     "isAdmin": false,
-    "followers": [
-      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
-    ],
+    "followers": [],
     "activity": {
       "17/08/2023, 4:30:17": "REGISTER",
       "18/08/2023, 5:00:12": "LOGIN"
@@ -203,6 +171,7 @@
     "following": [],
     "isAdmin": false,
     "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983",
       "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
     ],
     "activity": {
@@ -248,7 +217,9 @@
     ],
     "following": [],
     "isAdmin": false,
-    "followers": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
     "activity": {
       "17/08/2023, 10:45:20": "REGISTER",
       "18/08/2023, 11:15:15": "LOGIN"
@@ -269,7 +240,9 @@
     ],
     "following": [],
     "isAdmin": false,
-    "followers": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
     "activity": {
       "17/08/2023, 12:50:21": "REGISTER",
       "18/08/2023, 1:20:16": "LOGIN"
@@ -430,5 +403,66 @@
     "following": [],
     "followers": [],
     "activity": []
+  },
+  {
+    "id": "4d79cb3e-0d76-46f8-9939-fe258c1fe113",
+    "email": "tomerlavan1@gmail.com",
+    "password": "$2a$10$Yq4rrcKue.n0qCQ0Pl7eeeprz9Pp6hIISxheFx2Tx2hz6YFbEgVLG",
+    "firstName": "Tomer",
+    "lastName": "Laban",
+    "location": "Israel",
+    "occupation": "Software Developer",
+    "following": [],
+    "isAdmin": true,
+    "followers": [],
+    "activity": []
+  },
+  {
+    "id": "5fab4aaa-87b4-4ef6-8dda-af3e51a4dac7",
+    "email": "try@df.com",
+    "password": "$2a$10$m4PWLuFOwmimQHjA2otOceNZytnoEzXjk3ngobdF7Lwnf3w5W7Jzq",
+    "firstName": "Lior",
+    "lastName": "Raz",
+    "location": "Israel",
+    "occupation": "Actor",
+    "following": [],
+    "followers": [],
+    "activity": []
+  },
+  {
+    "id": "e49095f9-575e-40c8-9aa3-ea3535f1554b",
+    "email": "test@test.com",
+    "password": "$2a$10$HgZ1kYjxtLZmiVgDptkx9ut41EvXmT6E0lnuCHUIXpGbBJ/g0KNHi",
+    "firstName": "Tom",
+    "lastName": "Holland",
+    "location": "USA",
+    "occupation": "Actor",
+    "following": [],
+    "followers": [],
+    "activity": {
+      "28/08/2023, 19:09:44": "REGISTER"
+    },
+    "rememberMe": false
+  },
+  {
+    "id": "141d2f4f-ef6e-4fd4-8c34-b2f95e4e60d1",
+    "email": "test@test.com",
+    "password": "$2a$10$jElbBwH.cy20zuy.mmZNhOUAIO4aMC8rdj7RaPCuiWxlWy7d9DWgq",
+    "firstName": "Steve",
+    "lastName": "Jobs",
+    "location": "USA",
+    "occupation": "Entrepreneur",
+    "following": [],
+    "followers": [
+      "dd8559c4-0ea5-4e93-8924-3b71b3fe1983"
+    ],
+    "activity": {
+      "28/08/2023, 19:14:31": "REGISTER"
+    },
+    "isAdmin": false,
+    "posts": [
+      9
+    ],
+    "rememberMe": false
   }
 ]

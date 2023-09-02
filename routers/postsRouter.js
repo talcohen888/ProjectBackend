@@ -11,6 +11,8 @@ const getPostsRouter = () => {
     postsRouter.put("/like/:postId/:userId", postsController.addLikeToPost);
     postsRouter.put("/edit/:postId", postsController.updateContentPost);
 
+    postsRouter.delete("/:postId", postsController.deletePost);
+
     return postsRouter;
 }
 

@@ -19,7 +19,7 @@ class PostsController {
       const userId = req.params.userId;
       const usersData = readDataFromFile("users.json");
       const userIndex = usersData.findIndex((user) => user.id === userId);
-      
+
       if (userIndex !== -1) {
         const userName = getUserName(userId);
         const newPost = {
@@ -30,10 +30,10 @@ class PostsController {
           content: postContent,
           likesUserIds: [],
         };
-        
+
         postsData.push(newPost);
         writeDataToFile("posts.json", postsData);
-        
+
         usersData[userIndex].posts.push(newPost.id);
         writeDataToFile("users.json", usersData);
 
@@ -58,10 +58,7 @@ class PostsController {
   getAllPosts = (req, res) => {
     try {
       const postsData = readDataFromFile("posts.json");
-      res.status(200).json({
-        status: "Success",
-        data: postsData,
-      });
+      res.status(200).send(postsData.reverse());
     } catch (error) {
       res.status(400).json({
         status: "Failed",
@@ -135,8 +132,7 @@ class PostsController {
       if (postIndex !== -1) {
         toggleStringInArray(postsData[postIndex].likesUserIds, userId);
         writeDataToFile("posts.json", postsData);
-        console.log(postsData[postIndex]);
-        
+
         res.status(200).json({
           status: "Success",
           data: postsData[postIndex],
@@ -154,10 +150,9 @@ class PostsController {
       });
     }
   };
-  
+
   updateContentPost = (req, res) => {
     try {
-      console.log(req.body);
       const postId = parseInt(req.params.postId);
       const postsData = readDataFromFile("posts.json");
       const postIndex = postsData.findIndex((post) => post.id === postId);
@@ -165,7 +160,7 @@ class PostsController {
       if (postIndex !== -1) {
         postsData[postIndex].content = req.body.newPostContent;
         writeDataToFile("posts.json", postsData);
-        
+
         res.status(200).json({
           status: "Success",
           data: postsData[postIndex],
@@ -181,6 +176,20 @@ class PostsController {
         status: "Failed",
         message: "Internal Server Error",
       });
+    }
+  };
+
+  deletePost = async (req, res) => {
+    try {
+      const postId = parseInt(req.params.postId);
+      const posts = readDataFromFile('posts.json');
+      const updatedPosts = posts.filter(post => post.id !== postId);
+      writeDataToFile('posts.json', updatedPosts);
+
+      res.status(200).send(updatedPosts);
+    } catch (err) {
+      console.error(`deletePost: ${err}`)
+      res.status(500).send("Internal Error");
     }
   };
 }
