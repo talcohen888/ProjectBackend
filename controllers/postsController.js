@@ -76,7 +76,7 @@ class PostsController {
       const userPosts = postsData.filter((post) =>
         user.posts.includes(post.id)
       );
-      res.status(200).send(userPosts);
+      res.status(200).send(userPosts.reverse());
     } catch (error) {
       res.status(400).send("Internal Server Error");
     }
